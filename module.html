@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<title>Prototype</title>
+	<meta charset="utf-8" />
+	<style>
+		output{
+			display: block;
+			background: #0ff;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="output">
+		<output id="add"></output>
+		<output id="subtract"></output>
+	</div>
+
+<script>
+	(function(){
+
+		var Calculator	= function(eq){
+			var id=document.getElementById(eq);	
+
+			return {
+				add:function(x,y){
+					id.innerHTML=x+y;
+				},
+				subtract:function(x,y){
+					id.innerHTML=x - y;
+				}				
+			};
+		};	
+
+		var add=new Calculator("add");
+		var sub=new Calculator("subtract");
+		add.add(5,5);
+		sub.subtract(4,5);
+		
+
+	})();
+</script>
+</body>
+</html>
